@@ -56,9 +56,9 @@ friends(X,Y) :- X/=Y, rivals(X,Z),rivals(Z,Y),!.
 
 enemies(X,Y) :- rivals(X,Y), great_power(X), great_power(Y).
 
-idea_pick(CountryX,CountryY,IdeaX, List) :- 
+idea_pick(CountryX,CountryY,IdeaX, X) :- 
     enemies(CountryX,CountryY), military_idea(IdeaX),
-    findall(M,military_idea(M), List).
+    findall(M,military_idea(M), X).
 
 friends_count(F, Count):-
     findall(M, friends(M, F), List), length(List, Count).
@@ -71,6 +71,12 @@ enemies_list(F, List):-
 
 friends_list(F, List):-
     findall(M, friends(M, F), List).
+
+rivals_list(F, List):-
+    findall(M, rivals(M, F), List).
+
+ideas_list(List):-
+    findall(M, military_idea(M), List).
 
 % queries
 

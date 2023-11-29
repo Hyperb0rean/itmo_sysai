@@ -1,0 +1,3 @@
+Great_Power and rivals value Ottomans and friends some Great_Power
+
+idea_picked some Military_Idea and Great_Power and enemies some Country
