@@ -35,7 +35,7 @@ def format_result(result):
 
 
 prolog = Prolog()
-prolog.consult("./lab1.pl")
+prolog.consult("../lab1/lab1.pl")
 print("Enter your Country name, Country that you want to check and idea they picked, separated by spaces")
 args = input().split()
 ideas = list(prolog.query(f"idea_pick('{args[0]}', '{args[1]}', '{args[2]}', List)"))
